@@ -52,4 +52,13 @@ bash run.sh
 # Citation
 If you use this code or data, please consider citing our paper:
 ```
+@misc{chen2025spatialreasoninghardvlms,
+      title={Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas}, 
+      author={Shiqi Chen and Tongyao Zhu and Ruochen Zhou and Jinghan Zhang and Siyang Gao and Juan Carlos Niebles and Mor Geva and Junxian He and Jiajun Wu and Manling Li},
+      year={2025},
+      eprint={2503.01773},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.01773}, 
+}
 ```
