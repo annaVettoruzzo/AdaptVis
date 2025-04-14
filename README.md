@@ -46,7 +46,7 @@ bash run.sh
 | `weight`                   | `1.2`                 | Coefficient for Scaling_vis. Can set from `[0, 5, 0.8, 1.2, 1.5, 2.0]`.                       |
 | `weight1`           | `0.5`                 | Coefficient for AdaptVis. Can set from `[0.5, 0.8]`.                                          |
 | `weight2`          | `1.2`                 | Coefficient for AdaptVis. Can set from `[1.2, 1.5, 2.0]`.                                     |
-| `th`                 | `0.3`                 | Threshold for AdaptVis.                                                                        |
+| `threshold`                 | `0.3`                 | Threshold for AdaptVis.                                                                        |
 
 
 # Citation
