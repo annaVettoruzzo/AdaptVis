@@ -1,6 +1,6 @@
-# AdaptVis: Spatial Understanding in Vision-Language Models Requires Adaptive Attention
+# Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas
 
-Code and datasets for **AdaptVis: Spatial Understanding in Vision-Language Models Requires Adaptive Attention** [[paper](https://arxiv.org/pdf/2503.01773)].
+Code and datasets for **Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas** [[paper](https://arxiv.org/pdf/2503.01773)].
 
 
 This code is based on the code of, **What's "up" with vision-language models? Investigating their struggle with spatial reasoning** [[paper](https://arxiv.org/pdf/2310.19785)][[code](https://github.com/amitakamath/whatsup_vlms)].
@@ -13,7 +13,7 @@ This code is based on the code of, **What's "up" with vision-language models? In
 # Datasets
  The code to load and evaluate each dataset in `dataset_zoo/aro_datasets.py`. The Question and Answering data is in `prompt/`.
 
-# ScalingVis and AdaptVis
+# Method: ScalingVis and AdaptVis
 
 ## Setting Up the environment
 
