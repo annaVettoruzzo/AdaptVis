@@ -1,6 +1,6 @@
 # AdaptVis: Spatial Understanding in Vision-Language Models Requires Adaptive Attention
 
-Code and datasets for "AdaptVis: Spatial Understanding in Vision-Language Models Requires Adaptive Attention".
+Code and datasets for **AdaptVis: Spatial Understanding in Vision-Language Models Requires Adaptive Attention** [[paper](https://arxiv.org/pdf/2503.01773)].
 
 
 This code is based on the code of, **What's "up" with vision-language models? Investigating their struggle with spatial reasoning** [[paper](https://arxiv.org/pdf/2310.19785)][[code](https://github.com/amitakamath/whatsup_vlms)].
