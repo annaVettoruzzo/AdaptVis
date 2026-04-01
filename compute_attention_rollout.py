@@ -28,12 +28,19 @@ def load_attention_maps(save_dir):
         dict: {layer_idx: {'attention': attn, 'start_idx': s, 'end_idx': e}}
     """
     attention_maps = {}
-    pattern = re.compile(r'diff_(\d+)_start45_end620\.npy')
+    # Flexible pattern to match any token range: diff_(layer)_start(start)_end(end).npy
+    pattern = re.compile(r'diff_(\d+)_start(-?\d+)_end(-?\d+)\.npy')
 
     for file in sorted(os.listdir(save_dir)):
         match = pattern.match(file)
         if match:
             layer_idx = int(match.group(1))
+            start_idx = int(match.group(2))
+            end_idx = int(match.group(3))
+
+            # Skip files with negative indices (those are for text tokens, not image tokens)
+            if start_idx < 0 or end_idx < 0:
+                continue
 
             attn = np.load(os.path.join(save_dir, file))
 
@@ -46,10 +53,10 @@ def load_attention_maps(save_dir):
 
             attention_maps[layer_idx] = {
                 'attention': attn,
-                'start_idx': 45,
-                'end_idx': 620
+                'start_idx': start_idx,
+                'end_idx': end_idx
             }
-            print(f"Loaded layer {layer_idx}: shape={attn.shape}, "
+            print(f"Loaded layer {layer_idx}: tokens {start_idx}-{end_idx}, shape={attn.shape}, "
                   f"min={attn.min():.4f}, max={attn.max():.4f}, mean={attn.mean():.4f}")
 
     return attention_maps
@@ -163,7 +170,7 @@ def reshape_to_grid(image_attention, grid_size=24):
 def visualize_attention_rollout(attention_grid, image_path=None, save_path=None,
                                 title="Attention Rollout"):
     """
-    Visualize attention rollout as heatmap.
+    Visualize attention rollout as heatmap overlaid on original image.
 
     Args:
         attention_grid: 2D attention grid
@@ -181,14 +188,24 @@ def visualize_attention_rollout(attention_grid, image_path=None, save_path=None,
         axes[0].set_title("Original Image")
         axes[0].axis('off')
 
-        # Display attention heatmap
-        im = axes[1].imshow(attention_grid, cmap='hot', interpolation='nearest')
-        axes[1].set_title(title)
+        # Display attention patches overlaid on original image
+        # Each patch is a discrete square (24x24 grid for LLaVA 1.5)
+        img_array = np.array(img)
+
+        # Show original image as base
+        axes[1].imshow(img_array)
+
+        # Overlay attention grid as discrete patches (no interpolation)
+        # extent maps the grid to image dimensions
+        im = axes[1].imshow(attention_grid, cmap='jet', alpha=0.6,
+                           interpolation='nearest',
+                           extent=[0, img_array.shape[1], img_array.shape[0], 0])
+        axes[1].set_title(title + " (Overlay)")
         axes[1].axis('off')
         plt.colorbar(im, ax=axes[1], fraction=0.046, pad=0.04)
     else:
         # Display only attention heatmap
-        im = axes.imshow(attention_grid, cmap='hot', interpolation='nearest')
+        im = axes.imshow(attention_grid, cmap='jet', interpolation='nearest')
         axes.set_title(title)
         axes.axis('off')
         plt.colorbar(im, ax=axes, fraction=0.046, pad=0.04)
@@ -368,6 +385,74 @@ def find_image_path_from_save_dir(save_dir):
         return None
 
 
+def save_sample_info(save_dir, folder_number, output_dir):
+    """
+    Save sample information (Prompt, Generation, Golden) to JSON file.
+
+    Args:
+        save_dir: Directory containing attention maps (used to find results file)
+        folder_number: Folder number corresponding to sample index
+        output_dir: Directory to save the info JSON
+    """
+    import json
+
+    try:
+        # Extract dataset name from save_dir path
+        # Expected format: output/Controlled_Images_A_weight0.80/
+        path_parts = save_dir.strip('/').split('/')
+        if len(path_parts) < 2:
+            print("Warning: Could not extract dataset name from save_dir")
+            return
+
+        dataset_folder = path_parts[-2] if len(path_parts) >= 2 else path_parts[-1]
+        dataset_name = dataset_folder.split('_weight')[0]
+
+        # Find the corresponding results JSON file
+        # Look for files matching the pattern: results1.5_{dataset}_*.json
+        output_base = path_parts[-3] if len(path_parts) >= 3 else 'output'
+
+        # Search for matching results files
+        # Exclude files ending with 'scores.json' as they only contain accuracy, not full results
+        results_files = []
+        for file in os.listdir(output_base):
+            if file.startswith(f'results1.5_{dataset_name}_') and file.endswith('.json') and not file.endswith('scores.json'):
+                results_files.append(os.path.join(output_base, file))
+
+        if not results_files:
+            print(f"Warning: No results JSON file found for dataset {dataset_name}")
+            return
+
+        # Use the first matching file (or could add logic to pick the most recent)
+        results_file = results_files[0]
+        print(f"Loading results from: {results_file}")
+
+        with open(results_file, 'r') as f:
+            results = json.load(f)
+
+        # Extract the entry for this folder number
+        if folder_number >= len(results):
+            print(f"Warning: Folder {folder_number} is out of range (max: {len(results)-1})")
+            return
+
+        sample_info = results[folder_number]
+
+        # Save to output directory
+        info_path = os.path.join(output_dir, 'sample_info.json')
+        with open(info_path, 'w') as f:
+            json.dump(sample_info, f, indent=4)
+
+        print(f"Saved sample info to: {info_path}")
+        print(f"  Prompt: {sample_info['Prompt'][:100]}...")
+        print(f"  Generation: {sample_info['Generation']}")
+        print(f"  Golden: {sample_info['Golden']}")
+
+    except Exception as e:
+        import traceback
+        print(f"Warning: Error saving sample info: {e}")
+        print("Full error traceback:")
+        traceback.print_exc()
+
+
 def main():
     """
     Main function to compute and visualize attention rollout.
@@ -458,6 +543,11 @@ def main():
         evolution_path = os.path.join(actual_output_dir, 'attention_evolution.png')
         print(f"Saving evolution plot to: {evolution_path}")
         visualize_attention_evolution(attentions, image_token_range, evolution_path)
+
+    # Save sample information (Prompt, Generation, Golden)
+    if folder_number is not None:
+        print("\nSaving sample information...")
+        save_sample_info(args.save_dir, folder_number, actual_output_dir)
 
     print(f"\nDone! Outputs saved to: {actual_output_dir}")
 
