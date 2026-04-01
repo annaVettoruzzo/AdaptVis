@@ -16,13 +16,13 @@ Following the original README.md file run the following commands to set up the e
 ```bash
 mkdir data
 mkdir output
+mkdir outputs
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
 Run the model and download the data (attention maps are saved automatically).
-Note: if you get an error after saving all attention maps (when the dataset processing reaches 100%) you can discard it for the scope of this experiments.
 ```bash 
 python3 main_aro.py --dataset=Controlled_Images_A --model-name='llava1.5' --download --method=base  --option=four
 ```
