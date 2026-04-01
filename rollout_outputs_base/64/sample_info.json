@@ -1,0 +1,5 @@
+{
+    "Prompt": "<image>\nUSER: Where is the dog in relation to the table? Answer with left, right, on or under.\nASSISTANT:",
+    "Generation": "On",
+    "Golden": "On"
+}

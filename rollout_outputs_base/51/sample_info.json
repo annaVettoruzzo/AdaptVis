@@ -1,0 +1,5 @@
+{
+    "Prompt": "<image>\nUSER: Where are the sunglasses in relation to the table? Answer with left, right, on or under.\nASSISTANT:",
+    "Generation": "Right",
+    "Golden": "Right"
+}

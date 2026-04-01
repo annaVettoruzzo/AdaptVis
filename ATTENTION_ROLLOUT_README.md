@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 Run the model and download the data (attention maps are saved automatically).
 ```bash 
-python3 main_aro.py --dataset=Controlled_Images_A --model-name='llava1.5' --download --method=base  --option=four
+python3 main_aro.py --dataset=Controlled_Images_A --model-name='llava1.5' --download --method=scaling_vis  --weight=0.8  --option=four
 ```
 
 Attention maps will be saved to:
@@ -36,6 +36,8 @@ Each file is named: `diff_{layer}_start{start}_end{end}.npy`
 
 For example: `diff_0_start576end1151.npy` (layer 0, image tokens 576-1151)
 
+Important note: The base method uses a different model class (`LlavaForConditionalGeneration`) that doesn't save attention weights. If you want to use this method, use `--method=scaling_vis` with `--weight=1.0` to get equivalent results to base while still saving attention.
+
 ### Step 2: Compute Attention Rollout
 
 **Automatic image detection (recommended)**:
@@ -46,7 +48,7 @@ The script can now automatically find the original image path and organizes outp
 # Auto-detects the image and shows it alongside attention heatmap
 # Outputs saved to: rollout_outputs/0/
 python compute_attention_rollout.py \
-    --save_dir ./output/Controlled_Images_A_weight1.00/0/ \
+    --save_dir ./output/Controlled_Images_A_weight0.80/0/ \
     --show_evolution
 ```
 
@@ -68,7 +70,7 @@ If auto-detection fails or you want to use a different image:
 
 ```bash
 python compute_attention_rollout.py \
-    --save_dir ./output/Controlled_Images_A_weight1.00/0/ \
+    --save_dir ./output/Controlled_Images_A_weight0.80/0/ \
     --image_path data/controlled_images/wineglass_on_table.jpeg \
     --output_dir ./rollout_outputs
 ```
@@ -158,7 +160,7 @@ After running the model and computing rollout:
 
 ```
 output/
-├── Controlled_Images_A_weight1.00/
+├── Controlled_Images_A_weight0.80/
 │   ├── 0/                          # Sample index 0
 │   │   ├── diff_0_start45end620.npy   # Layer 0
 │   │   ├── diff_1_start45end620.npy   # Layer 1
