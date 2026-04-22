@@ -168,7 +168,7 @@ def reshape_to_grid(image_attention, grid_size=24):
 
 
 def visualize_attention_rollout(attention_grid, image_path=None, save_path=None,
-                                title="Attention Rollout"):
+                                title="Attention Rollout", interpolation='bilinear'):
     """
     Visualize attention rollout as heatmap overlaid on original image.
 
@@ -177,6 +177,7 @@ def visualize_attention_rollout(attention_grid, image_path=None, save_path=None,
         image_path: path to original image (optional)
         save_path: path to save visualization
         title: plot title
+        interpolation: interpolation method ('nearest', 'bilinear', 'bicubic', etc.)
     """
     fig, axes = plt.subplots(1, 2 if image_path else 1,
                              figsize=(12, 6) if image_path else (8, 8))
@@ -195,17 +196,17 @@ def visualize_attention_rollout(attention_grid, image_path=None, save_path=None,
         # Show original image as base
         axes[1].imshow(img_array)
 
-        # Overlay attention grid as discrete patches (no interpolation)
-        # extent maps the grid to image dimensions
-        im = axes[1].imshow(attention_grid, cmap='jet', alpha=0.6,
-                           interpolation='nearest',
+        # Overlay smooth attention heatmap on original image
+        # Using bilinear interpolation for continuous, smooth regions
+        im = axes[1].imshow(attention_grid, cmap='jet', alpha=0.5,
+                           interpolation=interpolation,
                            extent=[0, img_array.shape[1], img_array.shape[0], 0])
         axes[1].set_title(title + " (Overlay)")
         axes[1].axis('off')
         plt.colorbar(im, ax=axes[1], fraction=0.046, pad=0.04)
     else:
-        # Display only attention heatmap
-        im = axes.imshow(attention_grid, cmap='jet', interpolation='nearest')
+        # Display only attention heatmap with smooth interpolation
+        im = axes.imshow(attention_grid, cmap='jet', interpolation=interpolation)
         axes.set_title(title)
         axes.axis('off')
         plt.colorbar(im, ax=axes, fraction=0.046, pad=0.04)
@@ -250,7 +251,7 @@ def compute_rollout_per_layer(attention_maps, image_token_range, max_layer=32):
     return attentions
 
 
-def visualize_attention_evolution(rollouts, image_token_range, save_path=None):
+def visualize_attention_evolution(rollouts, image_token_range, save_path=None, interpolation='bilinear'):
     """
     Visualize how attention evolves across layers (multi-panel figure).
 
@@ -258,6 +259,7 @@ def visualize_attention_evolution(rollouts, image_token_range, save_path=None):
         rollouts: dict of {layer_idx: image_attention_array}
         image_token_range: tuple (start_idx, end_idx)
         save_path: path to save figure
+        interpolation: interpolation method ('nearest', 'bilinear', 'bicubic', etc.)
     """
     # Select layers to visualize (e.g., layers 0, 8, 16, 24, 31)
     layers_to_show = [0, 8, 16, 24, 31]
@@ -273,7 +275,7 @@ def visualize_attention_evolution(rollouts, image_token_range, save_path=None):
 
         attention_grid = reshape_to_grid(image_attn_norm)
 
-        im = ax.imshow(attention_grid, cmap='hot', interpolation='nearest')
+        im = ax.imshow(attention_grid, cmap='hot', interpolation=interpolation)
         ax.set_title(f"Layer {layer_idx}")
         ax.axis('off')
         plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
@@ -385,6 +387,29 @@ def find_image_path_from_save_dir(save_dir):
         return None
 
 
+def find_original_image_mmbench(save_dir):
+    """
+    Find the original image for MMBench samples.
+
+    Args:
+        save_dir: Path like output/mmbench_base/0/
+
+    Returns:
+        str: Path to original image, or None if not found
+    """
+    try:
+        # Check if original_image.png exists in the save directory
+        image_path = os.path.join(save_dir, 'original_image.png')
+        if os.path.exists(image_path):
+            return image_path
+
+        return None
+
+    except Exception as e:
+        print(f"Warning: Error finding original image: {e}")
+        return None
+
+
 def save_sample_info(save_dir, folder_number, output_dir):
     """
     Save sample information (Prompt, Generation, Golden) to JSON file.
@@ -397,54 +422,94 @@ def save_sample_info(save_dir, folder_number, output_dir):
     import json
 
     try:
-        # Extract dataset name from save_dir path
-        # Expected format: output/Controlled_Images_A_weight0.80/
+        # Extract dataset info from save_dir path
+        # Expected formats:
+        # - output/Controlled_Images_A_weight0.80/0/
+        # - output/mmbench_base/0/
         path_parts = save_dir.strip('/').split('/')
         if len(path_parts) < 2:
             print("Warning: Could not extract dataset name from save_dir")
             return
 
         dataset_folder = path_parts[-2] if len(path_parts) >= 2 else path_parts[-1]
-        dataset_name = dataset_folder.split('_weight')[0]
-
-        # Find the corresponding results JSON file
-        # Look for files matching the pattern: results1.5_{dataset}_*.json
         output_base = path_parts[-3] if len(path_parts) >= 3 else 'output'
 
-        # Search for matching results files
-        # Exclude files ending with 'scores.json' as they only contain accuracy, not full results
-        results_files = []
-        for file in os.listdir(output_base):
-            if file.startswith(f'results1.5_{dataset_name}_') and file.endswith('.json') and not file.endswith('scores.json'):
-                results_files.append(os.path.join(output_base, file))
+        # Check if this is MMBench dataset
+        if 'mmbench' in dataset_folder.lower():
+            # MMBench: use simple results.json file
+            # The results.json is in the dataset folder, not the base output folder
+            results_file = os.path.join(output_base, dataset_folder, 'results.json')
+            if not os.path.exists(results_file):
+                print(f"Warning: MMBench results.json not found at {results_file}")
+                return
 
-        if not results_files:
-            print(f"Warning: No results JSON file found for dataset {dataset_name}")
-            return
+            print(f"Loading MMBench results from: {results_file}")
+            with open(results_file, 'r', encoding='utf-8') as f:
+                results = json.load(f)
 
-        # Use the first matching file (or could add logic to pick the most recent)
-        results_file = results_files[0]
-        print(f"Loading results from: {results_file}")
+            # Find the entry matching this folder number
+            sample_entry = None
+            for entry in results:
+                if entry.get('index') == folder_number:
+                    sample_entry = entry
+                    break
 
-        with open(results_file, 'r') as f:
-            results = json.load(f)
+            if sample_entry is None:
+                print(f"Warning: Sample {folder_number} not found in results.json")
+                return
 
-        # Extract the entry for this folder number
-        if folder_number >= len(results):
-            print(f"Warning: Folder {folder_number} is out of range (max: {len(results)-1})")
-            return
+            # Convert to the format expected by user
+            sample_info = {
+                "Prompt": sample_entry.get('prompt', ''),
+                "Generation": sample_entry.get('generation', ''),
+                "Golden": sample_entry.get('ground_truth', '')
+            }
 
-        sample_info = results[folder_number]
+            # Add category if available (for reference)
+            if 'category' in sample_entry:
+                sample_info["Category"] = sample_entry['category']
+
+        else:
+            # Original dataset format: results1.5_{dataset}_*.json
+            dataset_name = dataset_folder.split('_weight')[0]
+
+            # Search for matching results files
+            # Exclude files ending with 'scores.json' as they only contain accuracy, not full results
+            results_files = []
+            for file in os.listdir(output_base):
+                if file.startswith(f'results1.5_{dataset_name}_') and file.endswith('.json') and not file.endswith('scores.json'):
+                    results_files.append(os.path.join(output_base, file))
+
+            if not results_files:
+                print(f"Warning: No results JSON file found for dataset {dataset_name}")
+                return
+
+            # Use the first matching file (or could add logic to pick the most recent)
+            results_file = results_files[0]
+            print(f"Loading results from: {results_file}")
+
+            with open(results_file, 'r') as f:
+                results = json.load(f)
+
+            # Extract the entry for this folder number
+            if folder_number >= len(results):
+                print(f"Warning: Folder {folder_number} is out of range (max: {len(results)-1})")
+                return
+
+            sample_info = results[folder_number]
 
         # Save to output directory
         info_path = os.path.join(output_dir, 'sample_info.json')
-        with open(info_path, 'w') as f:
+        with open(info_path, 'w', encoding='utf-8') as f:
             json.dump(sample_info, f, indent=4)
 
         print(f"Saved sample info to: {info_path}")
         print(f"  Prompt: {sample_info['Prompt'][:100]}...")
         print(f"  Generation: {sample_info['Generation']}")
-        print(f"  Golden: {sample_info['Golden']}")
+        if 'Golden' in sample_info:
+            print(f"  Golden: {sample_info['Golden']}")
+        if 'Category' in sample_info:
+            print(f"  Category: {sample_info['Category']}")
 
     except Exception as e:
         import traceback
@@ -472,6 +537,9 @@ def main():
                        help='Grid size for image patches')
     parser.add_argument('--show_evolution', action='store_true',
                        help='Show attention evolution across layers')
+    parser.add_argument('--interpolation', type=str, default='bilinear',
+                       choices=['nearest', 'bilinear', 'bicubic', 'spline16'],
+                       help='Interpolation method for heatmap (default: bilinear for smooth regions)')
 
     args = parser.parse_args()
 
@@ -497,7 +565,14 @@ def main():
     # Auto-detect image path if not provided
     if args.image_path is None:
         print("\nNo image_path provided, attempting auto-detection...")
-        args.image_path = find_image_path_from_save_dir(args.save_dir)
+
+        # Try MMBench first (check for original_image.png)
+        args.image_path = find_original_image_mmbench(args.save_dir)
+
+        # If not found, try the original method for Controlled_Images datasets
+        if args.image_path is None:
+            args.image_path = find_image_path_from_save_dir(args.save_dir)
+
         if args.image_path is None:
             print("\nCould not auto-detect image path. Proceeding without original image overlay.")
         else:
@@ -534,7 +609,7 @@ def main():
     # Visualize
     save_path = os.path.join(actual_output_dir, 'attention_rollout.png')
     print(f"Saving visualization to: {save_path}")
-    visualize_attention_rollout(attention_grid, args.image_path, save_path)
+    visualize_attention_rollout(attention_grid, args.image_path, save_path, interpolation=args.interpolation)
 
     # Optionally show evolution
     if args.show_evolution:
@@ -542,7 +617,7 @@ def main():
         attentions = compute_rollout_per_layer(attention_maps, image_token_range, args.num_layers)
         evolution_path = os.path.join(actual_output_dir, 'attention_evolution.png')
         print(f"Saving evolution plot to: {evolution_path}")
-        visualize_attention_evolution(attentions, image_token_range, evolution_path)
+        visualize_attention_evolution(attentions, image_token_range, evolution_path, interpolation=args.interpolation)
 
     # Save sample information (Prompt, Generation, Golden)
     if folder_number is not None:

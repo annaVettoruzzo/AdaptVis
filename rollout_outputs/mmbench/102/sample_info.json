@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe image displays which art style?\nA. vector art\nB. watercolor\nC. early renaissance\nD. art nouveau\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "B",
+    "Category": "image_style"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThis image is an example of which style?\nA. Baroque\nB. vector art\nC. comic\nD. oil paint\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "image_style"
+}

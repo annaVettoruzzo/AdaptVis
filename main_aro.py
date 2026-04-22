@@ -19,7 +19,7 @@ def config():
             choices=[ "llava1.5","llava1.6"])
     parser.add_argument("--dataset", default="Controlled_Images_A", type=str, \
             choices=[ "Controlled_Images_A", "Controlled_Images_B", \
-            "COCO_QA_one_obj", "COCO_QA_two_obj", "VG_QA_one_obj", "VG_QA_two_obj", "VSR"])
+            "COCO_QA_one_obj", "COCO_QA_two_obj", "VG_QA_one_obj", "VG_QA_two_obj", "VSR", "MMBench"])
     parser.add_argument("--seed", default=1, type=int)
     parser.add_argument("--method",  type=str)
     parser.add_argument("--dola-decoding",   action="store_true")
@@ -32,14 +32,31 @@ def config():
     parser.add_argument("--weight2", default=1.0, type=float)
     parser.add_argument("--threshold", default=1.0, type=float)
     parser.add_argument("--option", default='four', type=str, choices=['two','four','six'])
+    # MMBench-specific arguments
+    parser.add_argument("--groups-filter", default=None, type=str, \
+            help="Comma-separated list of MMBench categories to include (e.g., 'Reasoning,Math'). Default: all categories.")
+    parser.add_argument("--n-samples", default=100, type=int, \
+            help="Number of samples per category for MMBench. Default: 100.")
 
     return parser.parse_args()
 
 
 def main(args):
-    seed_all(args.seed) 
+    seed_all(args.seed)
     model, image_preprocess = get_model(args.model_name, args.device, args.method)
-    dataset = get_dataset(args.dataset, image_preprocess=image_preprocess, download=args.download)
+
+    # Parse MMBench-specific arguments
+    dataset_kwargs = {"download": args.download}
+    if args.dataset == "MMBench":
+        if args.groups_filter:
+            # Convert comma-separated string to list
+            dataset_kwargs["groups_filter"] = [g.strip() for g in args.groups_filter.split(',')]
+        else:
+            dataset_kwargs["groups_filter"] = None
+        dataset_kwargs["n_samples"] = args.n_samples
+        dataset_kwargs["seed"] = args.seed
+
+    dataset = get_dataset(args.dataset, image_preprocess=image_preprocess, **dataset_kwargs)
     SAMPLE=True
     TEST=os.getenv('TEST_MODE', 'False') == 'True'
     sampled_indices=None

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich of the following statements match the image?\nA. A cyan square is to the left of a gray circle.\nB. A cyan ellipse is to the right of a gray circle.\nC. A cyan circle is to the right of a circle.\nD. A gray circle is to the left of a cyan shape.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "D",
+    "Category": "attribute_comparison"
+}

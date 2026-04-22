@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat art style is evident in this image?\nA. vector art\nB. pencil\nC. watercolor\nD. photography\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "image_style"
+}
