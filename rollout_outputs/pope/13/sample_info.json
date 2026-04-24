@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a book in the image?\nASSISTANT:",
+    "Generation": "Yes, there is a book in the image,",
+    "Golden": "yes",
+    "Category": "popular"
+}

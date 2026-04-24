@@ -6,9 +6,10 @@ This document explains how to compute and visualize attention rollout from saved
 
 The AdaptVis model saves per-layer attention maps during inference. These are used to compute **attention rollout**, showing how attention accumulates across layers to focus on specific image regions.
 
-**Two workflows available:**
+**Three workflows available:**
 1. **MMBench Dataset** (VQA benchmark with 20 categories)
-2. **Controlled Images Dataset** (original research setup)
+2. **POPE Dataset** (object hallucination evaluation, 3 categories)
+3. **Controlled Images Dataset** (original research setup)
 
 ## Quick Start
 
@@ -19,6 +20,15 @@ python rollout_mmbench.py --n-samples 10
 
 # Step 2: Visualize all samples
 python visualize_all_mmbench.py
+```
+
+### **POPE (Object Hallucination):**
+```bash
+# Step 1: Generate attention maps (10 samples per category)
+python rollout_pope.py --n-samples 10
+
+# Step 2: Visualize all samples
+python visualize_all_pope.py
 ```
 
 ### **Controlled Images:**
@@ -91,6 +101,57 @@ python visualize_all_mmbench.py --start 10 --max-samples 10
 
 ---
 
+## POPE Workflow
+
+### Step 1: Generate Attention Maps
+
+```bash
+# All categories, 100 samples each
+python rollout_pope.py
+
+# Specific categories
+python rollout_pope.py --groups-filter "adversarial,popular" --n-samples 50
+
+# Test with 10 samples
+python rollout_pope.py --n-samples 10
+```
+
+**Output:** `./output/pope_base/{idx}/`
+- `diff_*.npy` - Attention maps per layer
+- `original_image.png` - Original image for overlay
+- `results.json` - Questions, generations, ground truth
+
+**Available Categories:**
+```
+adversarial, popular, random
+```
+
+### Step 2: Visualize
+
+**Single sample:**
+```bash
+python compute_attention_rollout.py --save_dir ./output/pope_base/0/ --show_evolution
+```
+
+**Batch processing:**
+```bash
+# All samples
+python visualize_all_pope.py
+
+# First 10 samples
+python visualize_all_pope.py --max-samples 10
+
+# Samples 10-20
+python visualize_all_pope.py --start 10 --max-samples 10
+```
+
+**Output:** `./rollout_outputs/pope/{idx}/`
+- `attention_rollout.png` - Attention heatmap with image overlay
+- `attention_evolution.png` - Layer-by-layer evolution
+- `sample_info.json` - Question, generation, golden answer, category
+
+---
+
 ## Controlled Images Workflow
 
 ### Step 1: Run Model
@@ -127,6 +188,12 @@ python compute_attention_rollout.py \
 - `--output-dir`: Output directory (default: `./output/mmbench_base`)
 - `--device`: CUDA device (default: `cuda`)
 
+### `rollout_pope.py`
+- `--n-samples`: Samples per category (default: 10)
+- `--groups-filter`: Comma-separated categories (adversarial, popular, random)
+- `--output-dir`: Output directory (default: `./output/pope_base`)
+- `--device`: CUDA device (default: `cuda`)
+
 ### `compute_attention_rollout.py`
 - `--save_dir`: Directory with attention maps (required)
 - `--image_path`: Original image path (optional, auto-detected)
@@ -142,6 +209,13 @@ python compute_attention_rollout.py \
 - `--no-show-evolution`: Skip evolution plots (faster)
 - `--base-dir`: Input directory (default: `./output/mmbench_base`)
 - `--output-dir`: Output directory (default: `./rollout_outputs/mmbench`)
+
+### `visualize_all_pope.py`
+- `--max-samples`: Limit samples to process
+- `--start`: Start from specific index
+- `--no-show-evolution`: Skip evolution plots (faster)
+- `--base-dir`: Input directory (default: `./output/pope_base`)
+- `--output-dir`: Output directory (default: `./rollout_outputs/pope`)
 
 ---
 
@@ -174,6 +248,16 @@ Shows how attention changes across layers:
   "Generation": "B",
   "Golden": "B",
   "Category": "action_recognition"
+}
+```
+
+### POPE Sample Information
+```json
+{
+  "Prompt": "USER: <image>\nIs there a cat in the image?\nASSISTANT:",
+  "Generation": "yes",
+  "Golden": "yes",
+  "Category": "adversarial"
 }
 ```
 

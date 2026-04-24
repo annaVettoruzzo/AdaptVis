@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a couch in the image?\nASSISTANT:",
+    "Generation": "No, there is no couch in the image",
+    "Golden": "no",
+    "Category": "adversarial"
+}

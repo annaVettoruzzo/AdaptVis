@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a sandwich in the image?\nASSISTANT:",
+    "Generation": "Yes, there is a sandwich in the image",
+    "Golden": "yes",
+    "Category": "adversarial"
+}

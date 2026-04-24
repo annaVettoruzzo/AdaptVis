@@ -42,7 +42,9 @@ def get_dataset(dataset_name, image_preprocess=None, text_perturb_fn=None, image
     elif dataset_name == "MMBench":
         from .mmbench import get_mmbench
         return get_mmbench(image_preprocess=image_preprocess, *args, **kwargs)
+    elif dataset_name == "POPE":
+        from .pope import get_pope
+        return get_pope(image_preprocess=image_preprocess, *args, **kwargs)
 
-        
     else:
         raise ValueError(f"Unknown dataset {dataset_name}")

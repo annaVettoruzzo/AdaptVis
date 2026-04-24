@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a sink in the image?\nASSISTANT:",
+    "Generation": "Yes, there is a sink in the image,",
+    "Golden": "yes",
+    "Category": "random"
+}

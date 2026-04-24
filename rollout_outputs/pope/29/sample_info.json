@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a refrigerator in the image?\nASSISTANT:",
+    "Generation": "No, there is no refrigerator in",
+    "Golden": "no",
+    "Category": "random"
+}

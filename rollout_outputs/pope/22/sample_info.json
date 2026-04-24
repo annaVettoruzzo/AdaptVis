@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a cat in the image?\nASSISTANT:",
+    "Generation": "Yes, there is a cat in the image.",
+    "Golden": "yes",
+    "Category": "random"
+}

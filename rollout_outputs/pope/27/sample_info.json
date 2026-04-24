@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a clock in the image?\nASSISTANT:",
+    "Generation": "Yes, there is a clock in the image,",
+    "Golden": "yes",
+    "Category": "random"
+}

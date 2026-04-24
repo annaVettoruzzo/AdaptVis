@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a keyboard in the image?\nASSISTANT:",
+    "Generation": "No, there is no keyboard in the image.",
+    "Golden": "no",
+    "Category": "random"
+}

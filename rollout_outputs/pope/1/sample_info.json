@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a snowboard in the image?\nASSISTANT:",
+    "Generation": "Yes, there is a snowboard in the image",
+    "Golden": "yes",
+    "Category": "adversarial"
+}

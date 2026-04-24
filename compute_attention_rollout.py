@@ -389,10 +389,10 @@ def find_image_path_from_save_dir(save_dir):
 
 def find_original_image_mmbench(save_dir):
     """
-    Find the original image for MMBench samples.
+    Find the original image for MMBench and POPE samples.
 
     Args:
-        save_dir: Path like output/mmbench_base/0/
+        save_dir: Path like output/mmbench_base/0/ or output/pope_base/0/
 
     Returns:
         str: Path to original image, or None if not found
@@ -444,6 +444,39 @@ def save_sample_info(save_dir, folder_number, output_dir):
                 return
 
             print(f"Loading MMBench results from: {results_file}")
+            with open(results_file, 'r', encoding='utf-8') as f:
+                results = json.load(f)
+
+            # Find the entry matching this folder number
+            sample_entry = None
+            for entry in results:
+                if entry.get('index') == folder_number:
+                    sample_entry = entry
+                    break
+
+            if sample_entry is None:
+                print(f"Warning: Sample {folder_number} not found in results.json")
+                return
+
+            # Convert to the format expected by user
+            sample_info = {
+                "Prompt": sample_entry.get('prompt', ''),
+                "Generation": sample_entry.get('generation', ''),
+                "Golden": sample_entry.get('ground_truth', '')
+            }
+
+            # Add category if available (for reference)
+            if 'category' in sample_entry:
+                sample_info["Category"] = sample_entry['category']
+
+        elif 'pope' in dataset_folder.lower():
+            # POPE: use simple results.json file
+            results_file = os.path.join(output_base, dataset_folder, 'results.json')
+            if not os.path.exists(results_file):
+                print(f"Warning: POPE results.json not found at {results_file}")
+                return
+
+            print(f"Loading POPE results from: {results_file}")
             with open(results_file, 'r', encoding='utf-8') as f:
                 results = json.load(f)
 
@@ -566,7 +599,7 @@ def main():
     if args.image_path is None:
         print("\nNo image_path provided, attempting auto-detection...")
 
-        # Try MMBench first (check for original_image.png)
+        # Try MMBench/POPE first (check for original_image.png)
         args.image_path = find_original_image_mmbench(args.save_dir)
 
         # If not found, try the original method for Controlled_Images datasets

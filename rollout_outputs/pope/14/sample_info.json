@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIs there a spoon in the image?\nASSISTANT:",
+    "Generation": "No, there is no spoon in the image",
+    "Golden": "yes",
+    "Category": "popular"
+}
