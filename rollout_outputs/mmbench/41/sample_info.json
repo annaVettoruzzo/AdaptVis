@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what do the large Jacuzzi tub and marble countertops contribute to in the bathroom?\nA. The large Jacuzzi tub and marble countertops contribute to a comfortable and opulent experience.\nB. The large Jacuzzi tub and marble countertops serve as decorative elements in the bathroom.\nC. The large Jacuzzi tub and marble countertops are meant for functional purposes only.\nD. The large Jacuzzi tub and marble countertops create a minimalistic and modern look in the bathroom.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "function_reasoning"
+}

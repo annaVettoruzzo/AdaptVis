@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich corner is the juice?\nA. up\nB. down\nC. left\nD. right\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "object_localization"
+}

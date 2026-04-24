@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhere is it?\nA. Milan\nB. London\nC. Shanghai\nD. Pari\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "celebrity_recognition"
+}

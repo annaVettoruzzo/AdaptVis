@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nHow many apples are there in the image? And how many bananas are there?\nA. 3 apples and 3 banana\nB. 2 apples and 4 bananas\nC. 4 apples and 1 bananas\nD. 4 apples and 2 bananas\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "object_localization"
+}

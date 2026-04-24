@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. a cat that is drinking out of a sink\nB. You will not get anywhere if you open these doors and try to pass through.\nC. A corner bathtub in a very clean bathroom.\nD. Three men all eating sub sandwiches at a restaurant.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "action_recognition"
+}

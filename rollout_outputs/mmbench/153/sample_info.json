@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe images below show two pairs of magnets. The magnets in different pairs do not affect each other. All the magnets shown are made of the same material, but some of them are different sizes.\nThink about the magnetic force between the magnets in each pair. Which of the following statements is true?\nA. The magnitude of the magnetic force is the same in both pairs.\nB. The magnitude of the magnetic force is smaller in Pair 1.\nC. The magnitude of the magnetic force is smaller in Pair 2.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "physical_property_reasoning"
+}

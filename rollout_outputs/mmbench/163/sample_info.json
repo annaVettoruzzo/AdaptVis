@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is right?\nA. One washbasin is on the bottom of the other\nB. Two washbasins are far from each other\nC. One washbasin is on the top of the other\nD. Two washbasins are next to each other\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "physical_relation"
+}

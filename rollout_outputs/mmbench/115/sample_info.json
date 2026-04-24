@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is the main topic of the image\nA. A train driving on the road\nB. Two buses driving on the road\nC. A car driving on the road\nD. A bus driving on the road\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "image_topic"
+}

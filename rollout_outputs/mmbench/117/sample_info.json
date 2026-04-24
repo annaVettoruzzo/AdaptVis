@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what activities have the couple likely participated in recently?\nA. The couple has likely participated in skiing and snowboarding activities.\nB. The couple has likely participated in ice skating and snowshoeing activities.\nC. The couple has likely participated in beach volleyball and surfing activities.\nD. The couple has likely participated in hiking and camping activities.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "image_topic"
+}

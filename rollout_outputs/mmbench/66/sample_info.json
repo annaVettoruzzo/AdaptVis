@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat job is the person in the image most likely to do?\nA. athlete\nB. farmer\nC. nurse\nD. server\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "identity_reasoning"
+}

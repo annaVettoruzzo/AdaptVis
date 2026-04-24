@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThink about the name of the United States of America. As the name shows, the country has both a united national government and a collection of state governments. In the following questions, you will learn about the relationship between the national government and state governments. You will also learn about how state and local governments work.\nMany countries have both a national government and state governments. However, these countries divide power differently between the national and state governments. The table below describes three different systems for dividing power. Look at the table. Then answer the question below.\nThe United States has a federal system. Based on these definitions, which of these statements would most likely be made by a person who lives under a federal system?\nA. My national government officials decide most issues that come up.\nB. Both my state and national government officials have power over important issues.\nC. I only pay attention to state politics since the national government has almost no power.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "structuralized_imagetext_understanding"
+}

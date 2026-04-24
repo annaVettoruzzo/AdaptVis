@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat kind of human behavior does this picture describe?\nA. A chef is creating a gourmet meal in a restaurant kitchen, chopping, saut\u00e9ing, and plating while striving for perfection.\nB. A woman is jogging on a trail through a park, moving at a steady pace and breathing heavily as she exercises.\nC. Two people were chasing a bus, and the grandfather on the bus reached out to pull them on the bus\nD. A baker is kneading dough in a bakery, rolling and shaping it into loaves of bread while filling the room with delicious aromas.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "C",
+    "Category": "action_recognition"
+}

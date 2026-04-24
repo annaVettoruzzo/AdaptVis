@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich Python code can generate the content of the image?\nA. counter = 100 \nmiles = 1001.0\nname = \"John\" \nprint counter\nprint miles\nprint name\nB. counter = 100 \nmiles = 1000.0\nname = \"Gary\" \nprint counter\nprint miles\nprint name\nC. counter = 100 \nmiles = 1000.0\nname = \"John\" \nprint counter\nprint miles\nprint name\nD. counter = 110 \nmiles = 1000.0\nname = \"John\" \nprint counter\nprint miles\nprint name\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "structuralized_imagetext_understanding"
+}

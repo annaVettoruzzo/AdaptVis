@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat will happen next?\nA. the food is gonna fall off the spoon\nB. the woman is gonna feed the baby\nC. the woman is gonna eat the food herself\nD. both A,B, and C\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "future_prediction"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. A commercial kitchen with pots several pots on the stove.\nB. a shower a toilet some toilet paper and rugs\nC. A pizza covered in lots of greens on top of a table.\nD. A toilet in a bathroom with green faded paint.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "object_localization"
+}

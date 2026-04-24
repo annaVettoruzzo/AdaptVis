@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat's the profession of the people in this picture?\nA. electrician\nB. tailor\nC. driver\nD. teacher\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "identity_reasoning"
+}

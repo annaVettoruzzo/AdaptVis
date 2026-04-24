@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat will happen next?\nA. the puppy is gonna bite the man\nB. the puppy is gonna kiss the man\nC. the puppy is gonna sit on the man\nD. both A,B, and C\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "future_prediction"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwhat is this?\nA. a chemical tube\nB. a covid test kit\nC. a pregnancy test kit\nD. a biopsy\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "celebrity_recognition"
+}

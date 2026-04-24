@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich of the following captions best describes this image?\nA. A person reading a book in a library\nB. A woman applying makeup in front of a mirror\nC. A person taking a photo with a camera\nD. A group of people watching a movie in a theater\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "image_scene"
+}

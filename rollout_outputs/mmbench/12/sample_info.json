@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIn this comparison picture, are the upper and lower modules the same color?\nA. Not the same\nB. Can't judge\nC. same\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "attribute_comparison"
+}

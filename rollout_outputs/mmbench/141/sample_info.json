@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nExtract text from the image\nA. We Joyfully Celebrate Webb City\nB. PROUDLY WE HAIL WEBB CITY\nC. With Pride, We Honor Webb City\nD. Enthusiastically We Praise Webb City\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "ocr"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich image is more brightful?\nA. The first image\nB. The second image\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "B",
+    "Category": "image_quality"
+}

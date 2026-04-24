@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe diagram below is a model of two solutions. Each purple ball represents one particle of solute.\nWhich solution has a higher concentration of purple particles?\nA. neither; their concentrations are the same\nB. Solution A\nC. Solution B\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "physical_property_reasoning"
+}

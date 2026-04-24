@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is the anticipated outcome in this image?\nA. He will be visiting the police station voluntarily\nB. He will be released from the police station\nC. He will escape from the police station\nD. He will be arrested and taken to the police station\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "future_prediction"
+}

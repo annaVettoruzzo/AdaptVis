@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwho is this person?\nA. Keira Knightley\nB. Victoria Beckham\nC. Helen Mirren\nD. Kate Winslet\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "celebrity_recognition"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich of the following statements match the image?\nA. A green ellipse is below a yellow rectangle.\nB. A green ellipse is above a yellow rectangle.\nC. A rectangle is below a green ellipse.\nD. A blue semicircle is above a green shape.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "attribute_comparison"
+}

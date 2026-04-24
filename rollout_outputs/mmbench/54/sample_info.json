@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is the intended outcome in this image?\nA. She will undergo surgery to reduce leg muscle\nB. She will lose leg muscle\nC. She will maintain her current leg muscle size\nD. She will grow her leg muscle\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "D",
+    "Category": "future_prediction"
+}

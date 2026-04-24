@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what is the primary focus of the scene?\nA. The adult and child are enjoying a walk in a snowy area.\nB. The adult and child are participating in a snowball fight.\nC. The adult and child are hiking in a mountainous region.\nD. The adult and child are standing on a snowy surface, with the child wearing skis, indicating they are learning how to ski.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "image_topic"
+}

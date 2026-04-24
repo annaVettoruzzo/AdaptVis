@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nFigure: Taklamakan Desert.\nThe Taklamakan Desert is a cold desert ecosystem in northwestern China. Towns in this desert were stops along the Silk Road, a historical trade route between China and eastern Europe.\nWhich statement describes the Taklamakan Desert ecosystem?\nA. It has a medium amount of rain.\nB. It has dry, thin soil.\nC. It has warm summers and mild winters.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "physical_property_reasoning"
+}

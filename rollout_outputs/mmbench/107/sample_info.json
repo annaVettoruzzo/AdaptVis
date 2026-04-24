@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwhat style is depicted in this image?\nA. modernism\nB. dadaism\nC. impressionism\nD. post-Impressionism\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "C",
+    "Category": "image_style"
+}

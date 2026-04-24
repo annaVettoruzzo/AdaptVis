@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhere is the zebra\nA. It is on the bottom\nB. It is on the right\nC. It is on the left\nD. It is on the top\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "B",
+    "Category": "physical_relation"
+}

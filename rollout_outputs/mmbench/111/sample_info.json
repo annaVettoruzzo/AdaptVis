@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is the main topic of the image\nA. In a soccer game, the goalkeeper is holding the soccer ball\nB. In a soccer game, the goalkeeper is holding a red card\nC. In a soccer game, the goalkeeper is holding the opponent\u2019s jersey\nD. In a soccer game, the goalkeeper is holding a yellow card\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "image_topic"
+}

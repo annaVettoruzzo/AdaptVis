@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat can be the relationship of these people in this image?\nA. Lovers\nB. Classmates\nC. Brothers and sisters\nD. Colleagues\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "social_relation"
+}

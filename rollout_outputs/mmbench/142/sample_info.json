@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich formula has the same calculation result with the formula in the figure?\nA. (a-b)*(a-b)\nB. a-b\nC. (a+b)*(a-b)\nD. (a+b)*(a+b)\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "C",
+    "Category": "ocr"
+}

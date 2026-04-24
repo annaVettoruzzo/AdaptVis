@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nAthens was one of the most powerful independent city-states in ancient Greece. Look at the definitions below. Then answer the question.\nWhich of the following statements describess living in an independent city-state?\nA. I live by myself in the wilderness.\nB. I vote for a president that rules over many different cities.\nC. My city rules itself and is not part of a larger country.\nD. All the decisions about my city are made by a faraway emperor.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "structuralized_imagetext_understanding"
+}

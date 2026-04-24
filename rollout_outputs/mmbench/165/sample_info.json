@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nTrade happens when people agree to exchange goods and services. People give up something to get something else. Sometimes people barter, or directly exchange one good or service for another.\nLacey and Felix open their lunch boxes in the school cafeteria. Neither Lacey nor Felix got everything that they wanted. The table below shows which items they each wanted:\n\nLook at the images of their lunches. Then answer the question below.\nLacey's lunch Felix's lunch\nWhat can Lacey and Felix trade to each get what they want?\nA. Felix can trade his almonds for Lacey's tomatoes.\nB. Felix can trade his broccoli for Lacey's oranges.\nC. Lacey can trade her tomatoes for Felix's carrots.\nD. Lacey can trade her tomatoes for Felix's broccoli.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "D",
+    "Category": "physical_relation"
+}

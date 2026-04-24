@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what emotions might the image of the older gentleman sitting on a bench evoke in viewers?\nA. The image might evoke feelings of fear and uncertainty.\nB. The image might evoke feelings of anger and frustration.\nC. The image might evoke feelings of nostalgia, relaxation, or contemplation for some viewers.\nD. The image might evoke feelings of excitement and adventure.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "identity_reasoning"
+}

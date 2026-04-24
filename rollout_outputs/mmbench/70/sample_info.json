@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIdentify the emotion expressed in this image.\nA. sadness\nB. anger\nC. love\nD. happiness\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "image_emotion"
+}

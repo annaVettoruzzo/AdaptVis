@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat will happen next?\nA. they are gonna kiss on the glass door\nB. they are gonna crash the glass door\nC. they are gonna enter the glass door\nD. both A,B, and C\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "A",
+    "Category": "future_prediction"
+}

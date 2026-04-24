@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich option describe the object relationship in the image correctly?\nA. The cat is in the sink.\nB. The toilet is below the cat.\nC. The cat is attached to the sink.\nD. The sink is surrounding the cat.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "C",
+    "Category": "spatial_relationship"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what activity is likely being undertaken based on the items on the table?\nA. The person is arranging items for a photoshoot.\nB. The person is organizing a bookshelf.\nC. The person is setting up a study area.\nD. The person is preparing to cook or create a dish following a recipe.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "D",
+    "Category": "image_topic"
+}

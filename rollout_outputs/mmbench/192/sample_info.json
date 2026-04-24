@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich Python code can generate the content of the image?\nA. list1 = ['physics', 'chemistry', 1997, 2000]\nprint list1\ndel list1[2]\nprint \"After deleting value at index 2 : \"\nprint list1\nB. list1 = ['physics', 'chemistry', 1997, 2000]\nprint list1\ndel list1[4]\nprint \"After deleting value at index 2 : \"\nprint list1\nC. list1 = ['physics', 'chemistry', 1997, 2000]\nprint list1\ndel list1[3]\nprint \"After deleting value at index 2 : \"\nprint list1\nD. list1 = ['physics', 'chemistry', 1998, 2000]\nprint list1\ndel list1[2]\nprint \"After deleting value at index 2 : \"\nprint list1\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "structuralized_imagetext_understanding"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich option describe the object relationship in the image correctly?\nA. The bed is below the suitcase.\nB. The suitcase is beside the bed.\nC. The bed is in front of the cup.\nD. The keyboard is touching the cat.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "spatial_relationship"
+}

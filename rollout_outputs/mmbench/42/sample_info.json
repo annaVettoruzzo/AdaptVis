@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, how can fun and engaging toothbrush holders help children develop better dental health habits?\nA. They make brushing teeth a more enjoyable and appealing activity for children.\nB. They teach children how to properly hold toys and a giant toothbrush.\nC. They provide children with unique and playful designs for their toothbrushes.\nD. They encourage children to take pictures in the bathroom mirror.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "function_reasoning"
+}

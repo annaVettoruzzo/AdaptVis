@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich image shows the highest sharpness?\nA. upper right\nB. down left\nC. down right\nD. upper left\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "A",
+    "Category": "image_quality"
+}

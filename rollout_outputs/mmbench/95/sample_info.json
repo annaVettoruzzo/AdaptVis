@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nCan you identify the season in which the picture was taken?\nA. winter\nB. spring\nC. summer\nD. fall\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "image_scene"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. A standing toilet sitting inside of a stone and cement room.\nB. Two skate boarders and one of them mid-jump.\nC. A wooden table with a white plate of fresh fruit sitting on it.\nD. Three wild goats playing on a rocky mountainside.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "image_topic"
+}

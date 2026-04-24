@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what can be inferred about the woman's fashion sense and style?\nA. The woman's fashion sense is outdated and not trendy.\nB. The woman's fashion sense is focused solely on comfort, disregarding style.\nC. The woman has a stylish and comfortable fashion sense, evident from her choice of clothing and posture.\nD. The woman's outfit is not appropriate for outdoor settings.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "identity_reasoning"
+}

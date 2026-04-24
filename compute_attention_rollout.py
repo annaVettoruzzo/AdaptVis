@@ -537,7 +537,7 @@ def main():
                        help='Grid size for image patches')
     parser.add_argument('--show_evolution', action='store_true',
                        help='Show attention evolution across layers')
-    parser.add_argument('--interpolation', type=str, default='bilinear',
+    parser.add_argument('--interpolation', type=str, default='nearest',
                        choices=['nearest', 'bilinear', 'bicubic', 'spline16'],
                        help='Interpolation method for heatmap (default: bilinear for smooth regions)')
 

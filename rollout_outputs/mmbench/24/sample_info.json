@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwhat is the color of this object?\nA. orange\nB. purple\nC. pink\nD. gray\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "attribute_recognition"
+}

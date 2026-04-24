@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich of the following captions best describes this image?\nA. A person practicing martial arts in a studio.\nB. A person skateboarding in a skatepark\nC. A group of people playing basketball on a court.\nD. A woman doing gymnastics on a balance beam.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "image_scene"
+}

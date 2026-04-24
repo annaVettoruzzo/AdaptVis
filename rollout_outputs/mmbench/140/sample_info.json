@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe volume of which object can be calculated using the formula in the figure?\nA. Cone.\nB. Sphere.\nC. Cuboid.\nD. Cylinder.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "ocr"
+}

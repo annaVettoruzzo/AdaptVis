@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. A man looking to his side while he holds his arms up to catch a frisbee.\nB. A traffic sigh stating an area is restricted and no thru traffic is allowed.\nC. A white stove top oven sitting inside of a kitchen.\nD. A group of children running after a soccer ball\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "action_recognition"
+}

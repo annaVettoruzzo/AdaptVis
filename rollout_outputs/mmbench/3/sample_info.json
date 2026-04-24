@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat kind of human behavior does this picture describe?\nA. A man is practicing his parkour skills in an urban environment, vaulting over obstacles and performing acrobatic moves with deft precision.\nB. A group of men walked side by side on the street in unison, exuding the breath of youth.\nC. A family is fishing off a dock at a lake, casting lines and waiting patiently for a bite while enjoying each other's company and the tranquility of nature.\nD. A group of volunteers are building a house for the needy, hammering nails and sawing wood while working together to construct a home.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "action_recognition"
+}

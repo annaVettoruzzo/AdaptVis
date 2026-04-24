@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich of the following emotions is shown in this image?\nA. lonely\nB. happy\nC. supportive\nD. weavy\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "D",
+    "Category": "image_emotion"
+}

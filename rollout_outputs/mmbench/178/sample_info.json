@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat can be the relationship between the two main persons in this image?\nA. Teacher and student\nB. Colleagues\nC. Lovers\nD. Husband and wife\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "social_relation"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is correct Python code to generate the content of the image?\nA. fruits = [\"apple\", \"banana\", \"cherry\"]\\nfor x in fruits:\\n  print(x)\nB. x = min(5, 10, 25)\\ny = max(5, 10, 25)\\n\\nprint(x)\\nprint(y)\nC. a = 33\\nb = 200\\nif b > a:\\n  print(\"b is greater than a\")\nD. class Person:\\n  def __init__(self, name, age):\\n    self.name = name\\n    self.age = age\\n\\np1 = Person(\"John\", 36)\\n\\nprint(p1.name)\\nprint(p1.age)\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "structuralized_imagetext_understanding"
+}

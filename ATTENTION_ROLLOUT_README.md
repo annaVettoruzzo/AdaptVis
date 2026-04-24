@@ -1,203 +1,198 @@
 # Computing Attention Rollout for AdaptVis
 
-This document explains how to compute and visualize attention rollout (like Figure 5 in the paper) from the saved attention maps.
+This document explains how to compute and visualize attention rollout from saved attention maps.
 
 ## Overview
 
-The AdaptVis model saves per-layer attention maps during inference. These can be used to compute **attention rollout**, which shows how attention accumulates across layers to focus on specific image regions.
+The AdaptVis model saves per-layer attention maps during inference. These are used to compute **attention rollout**, showing how attention accumulates across layers to focus on specific image regions.
+
+**Two workflows available:**
+1. **MMBench Dataset** (VQA benchmark with 20 categories)
+2. **Controlled Images Dataset** (original research setup)
 
 ## Quick Start
 
-### Step 1: Run Model to Save Attention Maps
-
-First, run the model with attention saving enabled. The attention maps are saved automatically when using the ADAPTVIS or ScalingVis methods.
-
-Following the original README.md file run the following commands to set up the environment.
+### **MMBench (VQA):**
 ```bash
-mkdir data
-mkdir output
-mkdir outputs
-python -m venv .venv
-source .venv/bin/activate
+# Step 1: Generate attention maps (10 samples per category)
+python rollout_mmbench.py --n-samples 10
+
+# Step 2: Visualize all samples
+python visualize_all_mmbench.py
+```
+
+### **Controlled Images:**
+```bash
+# Step 1: Run model with attention saving
+python3 main_aro.py --dataset=Controlled_Images_A --model-name='llava1.5' \
+    --download --method=scaling_vis --weight=0.8 --option=four
+
+# Step 2: Visualize attention rollout
+python compute_attention_rollout.py \
+    --save_dir ./output/Controlled_Images_A_weight0.80/0/ --show_evolution
+```
+
+---
+
+## MMBench Workflow
+
+### Step 1: Generate Attention Maps
+
+```bash
+# All categories, 100 samples each
+python rollout_mmbench.py
+
+# Specific categories
+python rollout_mmbench.py --groups-filter "action_recognition,object_localization" --n-samples 50
+
+# Test with 10 samples
+python rollout_mmbench.py --n-samples 10
+```
+
+**Output:** `./output/mmbench_base/{idx}/`
+- `diff_*.npy` - Attention maps per layer
+- `original_image.png` - Original image for overlay
+- `results.json` - Prompts, generations, ground truth
+
+**Available Categories:**
+```
+action_recognition, attribute_comparison, attribute_recognition,
+celebrity_recognition, function_reasoning, identity_reasoning,
+image_emotion, image_quality, image_scene, image_style,
+image_topic, nature_relation, object_localization, ocr,
+physical_property_reasoning, physical_relation, social_relation,
+spatial_relationship, structuralized_imagetext_understanding,
+future_prediction
+```
+
+### Step 2: Visualize
+
+**Single sample:**
+```bash
+python compute_attention_rollout.py --save_dir ./output/mmbench_base/0/ --show_evolution
+```
+
+**Batch processing:**
+```bash
+# All samples
+python visualize_all_mmbench.py
+
+# First 10 samples
+python visualize_all_mmbench.py --max-samples 10
+
+# Samples 10-20
+python visualize_all_mmbench.py --start 10 --max-samples 10
+```
+
+**Output:** `./rollout_outputs/mmbench/{idx}/`
+- `attention_rollout.png` - Attention heatmap with image overlay
+- `attention_evolution.png` - Layer-by-layer evolution
+- `sample_info.json` - Prompt, generation, golden answer, category
+
+---
+
+## Controlled Images Workflow
+
+### Step 1: Run Model
+
+```bash
+# Setup environment
+mkdir data output outputs
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+
+# Run model with attention saving
+python3 main_aro.py --dataset=Controlled_Images_A --model-name='llava1.5' \
+    --download --method=scaling_vis --weight=0.8 --option=four
 ```
 
-Run the model and download the data (attention maps are saved automatically).
-```bash 
-python3 main_aro.py --dataset=Controlled_Images_A --model-name='llava1.5' --download --method=scaling_vis  --weight=0.8  --option=four
-```
+**Output:** `./output/Controlled_Images_A_weight0.80/{idx}/`
+- `diff_*.npy` - Attention maps (pre-softmax logits)
 
-Attention maps will be saved to:
-```
-./output/{dataset}_weight{weight}/{index}/
-```
-
-Each file is named: `diff_{layer}_start{start}_end{end}.npy`
-
-For example: `diff_0_start576end1151.npy` (layer 0, image tokens 576-1151)
-
-Important note: The base method uses a different model class (`LlavaForConditionalGeneration`) that doesn't save attention weights. If you want to use this method, use `--method=scaling_vis` with `--weight=1.0` to get equivalent results to base while still saving attention.
-
-### Step 2: Compute Attention Rollout
-
-**Automatic image detection (recommended)**:
-
-The script can now automatically find the original image path and organizes outputs by folder number:
+### Step 2: Visualize
 
 ```bash
-# Auto-detects the image and shows it alongside attention heatmap
-# Outputs saved to: rollout_outputs/0/
+# Auto-detects image path
 python compute_attention_rollout.py \
-    --save_dir ./output/Controlled_Images_A_weight0.80/0/ \
-    --show_evolution
+    --save_dir ./output/Controlled_Images_A_weight0.80/0/ --show_evolution
 ```
 
-**Output Organization**:
-```
-rollout_outputs/
-├── 0/                          # Outputs for image 0
-│   ├── attention_rollout.png
-│   └── attention_evolution.png
-├── 1/                          # Outputs for image 1
-│   └── attention_rollout.png
-└── 5/                          # Outputs for image 5
-    └── attention_rollout.png
-```
+---
 
-**Manual image path**:
+## Parameters
 
-If auto-detection fails or you want to use a different image:
-
-```bash
-python compute_attention_rollout.py \
-    --save_dir ./output/Controlled_Images_A_weight0.80/0/ \
-    --image_path data/controlled_images/wineglass_on_table.jpeg \
-    --output_dir ./rollout_outputs
-```
-
-## Script Features
+### `rollout_mmbench.py`
+- `--n-samples`: Samples per category (default: 10)
+- `--groups-filter`: Comma-separated categories
+- `--output-dir`: Output directory (default: `./output/mmbench_base`)
+- `--device`: CUDA device (default: `cuda`)
 
 ### `compute_attention_rollout.py`
+- `--save_dir`: Directory with attention maps (required)
+- `--image_path`: Original image path (optional, auto-detected)
+- `--output_dir`: Output directory (default: `./rollout_outputs`)
+- `--interpolation`: `nearest` (patches), `bilinear` (smooth), `bicubic`, `spline16`
+- `--show_evolution`: Show layer-by-layer evolution
+- `--num_layers`: Layers to use (default: 32)
+- `--grid_size`: Patch grid size (default: 24)
 
-Full-featured script with more options:
+### `visualize_all_mmbench.py`
+- `--max-samples`: Limit samples to process
+- `--start`: Start from specific index
+- `--no-show-evolution`: Skip evolution plots (faster)
+- `--base-dir`: Input directory (default: `./output/mmbench_base`)
+- `--output-dir`: Output directory (default: `./rollout_outputs/mmbench`)
 
-```bash
-python compute_attention_rollout.py \
-    --save_dir PATH          # Directory with .npy files \
-    --image_path PATH        # Optional: original image \
-    --output_dir PATH        # Output directory (default: ./rollout_outputs) \
-    --num_layers 32          # Number of layers to use \
-    --grid_size 24           # Image patch grid size (default: 24) \
-    --show_evolution         # Show attention across layers
-```
-
-**Features**:
-- Customizable number of layers
-- Overlay attention on original image
-- Multi-panel figure showing evolution across layers
-- Saves high-resolution figures
+---
 
 ## Understanding the Output
 
 ### Attention Rollout Heatmap
-
-The heatmap shows the model's attention to different image patches:
-
 - **Brighter colors** (yellow/white) = higher attention
-- **Darker colors** (red/black) = lower attention
+- **Darker colors** (blue/black) = lower attention
+- **All 576 patches** shown (24×24 grid for LLaVA 1.5)
 
-### Important Notes
+### Patch-based Visualization
+- LLaVA 1.5 processes images as **24×24 patches** (576 total)
+- Each patch covers **14×14 pixels** of the 336×336 image
+- `--interpolation nearest`: Shows discrete patches (recommended)
+- `--interpolation bilinear`: Smooth interpolation
 
-1. **Pre-softmax logits**: The saved attention maps are pre-softmax (raw logits), so the script applies softmax to convert them to probabilities.
+**Why only some patches appear highlighted:**
+The model learns to focus on relevant regions. Most patches have low attention (blue), few have high attention (red/yellow). This is expected behavior.
 
-2. **Last token only**: The saved data only contains the last token's attention (not full attention matrices), so we average across layers instead of computing true attention rollout.
-
-3. **Normalization**: The script normalizes each layer's attention to 0-1 range for better visualization.
-
-### Attention Evolution (with `--show_evolution`)
-
+### Attention Evolution
 Shows how attention changes across layers:
+- **Early layers** (0, 8): Diffuse attention
+- **Middle layers** (16): Starts focusing
+- **Late layers** (24, 31): Sharp focus on relevant regions
 
-```
-Layer 0  →  Layer 8  →  Layer 16  →  Layer 24  →  Layer 31
-(early)                                           (late)
+### MMBench Sample Information
+```json
+{
+  "Prompt": "USER: <image>\nWhich one is correct?\n...",
+  "Generation": "B",
+  "Golden": "B",
+  "Category": "action_recognition"
+}
 ```
 
-Typical pattern:
-- **Early layers**: Diffuse attention
-- **Middle layers**: Starts focusing
-- **Late layers**: Sharp focus on relevant regions
+---
 
 ## Technical Details
 
 ### Attention Rollout Computation
-
-Attention rollout is computed as:
-
+Since we only save the last token's attention, we average across layers:
 ```
-Rollout_l = I + Σ(A_i × Rollout_{i-1})
+Rollout = mean(Layer_0_attention, Layer_1_attention, ..., Layer_31_attention)
 ```
 
-Where:
-- `I` = identity matrix (residual connection)
-- `A_i` = attention matrix at layer i
-- We use: `0.5 × I + 0.5 × A` for each layer
+### Pre-softmax Logits
+Saved attention maps are pre-softmax logits. The script applies softmax automatically to convert to probabilities.
 
-This accumulates attention across all layers, showing the final attention distribution.
-
-### Image Token Mapping
-
-For CLIP ViT-L/14 (used in LLaVA 1.5):
-- Input image: 336×336 pixels
+### Image Token Mapping (LLaVA 1.5)
+- Input: 336×336 pixels
 - Patch size: 14×14 pixels
 - Grid: 24×24 = 576 patches
+- Token positions: 5-580 (image tokens)
 
-The attention weights map to these 576 patches, which are reshaped to a 24×24 grid for visualization.
-
-## File Structure
-
-After running the model and computing rollout:
-
-```
-output/
-├── Controlled_Images_A_weight0.80/
-│   ├── 0/                          # Sample index 0
-│   │   ├── diff_0_start45end620.npy   # Layer 0
-│   │   ├── diff_1_start45end620.npy   # Layer 1
-│   │   └── ... (layers 0-31)
-│   ├── 1/                          # Sample index 1
-│   └── ...
-│
-└── rollout_outputs/                # Generated visualizations
-    ├── 0/                          # Outputs for sample 0
-    │   ├── attention_rollout.png
-    │   └── attention_evolution.png
-    ├── 1/                          # Outputs for sample 1
-    └── ...
-```
-
-**Attention maps (`.npy` files)**:
-- Shape: `(batch_size, num_heads, seq_len)` - last token's attention only
-- Pre-softmax logits (script applies softmax automatically)
-- Extracted: image tokens at positions 45-620 (576 patches = 24×24 grid)
-
-## References
-
-- Abnar & Zuidema (2020): "Quantifying Attention Flow in Transformers"
-- Chefer et al. (2021): "Transformer Interpretability Beyond Attention Visualization"
-
-## Citation
-
-If you use this code, please cite the AdaptVis paper:
-
-```bibtex
-@misc{chen2025spatialreasoninghardvlms,
-      title={Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas},
-      author={Shiqi Chen and Tongyao Zhu and Ruochen Zhou and Jinghan Zhang and Siyang Gao and Juan Carlos Niebles and Mor Geva and Junxian He and Jiajun Wu and Manling Li},
-      year={2025},
-      eprint={2503.01773},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2503.01773},
-}
-```

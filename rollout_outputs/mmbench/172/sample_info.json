@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat can be the relationship between the two persons in this image?\nA. Mother and son\nB. Brother and sister\nC. Husband and wife\nD. Father and daughter\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "social_relation"
+}

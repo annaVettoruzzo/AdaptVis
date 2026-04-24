@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhere is the sheep?\nA. The sheep is on the right of the car\nB. The sheep is on the left of the car\nC. The sheep is behind the car\nD. The sheep is in the front of the car\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "physical_relation"
+}

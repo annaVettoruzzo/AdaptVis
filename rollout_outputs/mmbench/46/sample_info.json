@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat's the function of the demonstrated object?\nA. a sanitary facility used for excretion\nB. tool used for cleaning the toilet bowl\nC. It is usually used to hold food\nD. It is usually used to hold drinks\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "function_reasoning"
+}

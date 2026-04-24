@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich special day is associated with this poster?\nA. Mother's Day\nB. Earth Day.\nC. Children's Day.\nD. Father's Day.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "ocr"
+}

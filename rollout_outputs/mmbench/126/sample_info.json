@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nIn nature, what's the relationship between these two creatures?\nA. Predatory relationships\nB. Competitive relationships\nC. Parasitic relationships\nD. Symbiotic relationship\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "A",
+    "Category": "nature_relation"
+}

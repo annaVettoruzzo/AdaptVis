@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat's the function of the demonstrated object?\nA. Pick-up\nB. grill\nC. filtration\nD. flavouring\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "function_reasoning"
+}

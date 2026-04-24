@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is the object in this picture?\nA. Piano\nB. Flute\nC. Pipa\nD. Violin\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "celebrity_recognition"
+}

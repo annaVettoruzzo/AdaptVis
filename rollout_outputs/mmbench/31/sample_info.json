@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwhat landmark is this? and where is it?\nA. Sagrada Familia in Barcelona, Spain\nB. Uluru in the Northern Territory, Australia\nC. Neuschwanstein in Bavaria\nD. Acropolis of Athens, Greece\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "celebrity_recognition"
+}

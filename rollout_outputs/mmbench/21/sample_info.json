@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what does the dog's behavior of jumping and playing Frisbee indicate about its well-being?\nA. The dog is engaged in physical activity, promoting its health and well-being.\nB. The dog is attempting to catch a bird in mid-air.\nC. The dog is bored and looking for something to do.\nD. The dog is participating in a professional Frisbee competition.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "attribute_recognition"
+}

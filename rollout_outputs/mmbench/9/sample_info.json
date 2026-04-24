@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat kind of human behavior does this picture describe?\nA. This is a family of four taking a photo, with their names on their foreheads and happy smiles on their faces\nB. A man is practicing meditation in a park, sitting cross-legged and focusing on his breathing and inner thoughts.\nC. A musician is playing a piano in a concert hall, fingers gliding across the keys as he performs a classical piece.\nD. A family is having a barbecue in their backyard, grilling burgers and hot dogs and enjoying a warm summer day together.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "action_recognition"
+}

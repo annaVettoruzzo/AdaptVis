@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. A tan colored horse is tied to a treadmill.\nB. This empty kitchen has a refrigerator, cabinets, and cupboards.\nC. A slice of cake next to a bottle of cola.\nD. A person riding down a sidewalk on a skateboard.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "action_recognition"
+}

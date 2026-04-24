@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, where is the laptop?\nA. The laptop is on the bed\nB. The laptop is on the small table\nC. The laptop is next to the small table\nD. The laptop is next to the bed\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "physical_relation"
+}

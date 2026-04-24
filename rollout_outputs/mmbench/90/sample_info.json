@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich scene category matches this image the best?\nA. jewelry_shop\nB. excavation\nC. forest/broadleaf\nD. botanical_garden\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "image_scene"
+}

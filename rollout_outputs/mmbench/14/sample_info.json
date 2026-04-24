@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nAre the two candy jars in the picture the same shape?\nA. same\nB. Not the same\nC. Can't judge\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "attribute_comparison"
+}

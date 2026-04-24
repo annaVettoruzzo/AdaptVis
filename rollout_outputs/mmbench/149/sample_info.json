@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat can the formula in this picture be used to do?\nA. To calculate the sum of two values.\nB. To calculate the area of an object.\nC. To calculate the probability of a particular event.\nD. To calculate the distance of two points.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "ocr"
+}

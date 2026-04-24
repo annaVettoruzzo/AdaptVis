@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich image is the brightest one?\nA. down right\nB. upper left\nC. upper right\nD. down left\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "C",
+    "Category": "image_quality"
+}

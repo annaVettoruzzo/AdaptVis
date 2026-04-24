@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nDoes the picture show a mountainous landscape or a coastal landscape?\nA. Coastal\nB. plain\nC. basin\nD. Mountainous\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "image_scene"
+}

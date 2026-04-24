@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich can be the associated text with this image posted on twitter\nA. Kung Fu panda 4 sera el final de Po\ud83d\udc3c \ud83d\udc49https://youtube.com/shorts/UhqNHi5Yxqk?feature=share\u2026 \ud83d\udc48#kunfupanda #movienews #guerrerodragon\nB. Sunday is funday. Let's play some poker. #ZPC #ZenPandaCoin\nC. hotpot pandas \ud83d\udc3c\u2764\ufe0f\u200d\ud83d\udd25\nD. I asked Midjourney for pandas rolling down the mountain...\n\nInstead, I got this!\n\n\ud83d\udc3c\ud83d\uddfb\ud83e\udd66\n\nSeems it's doing better with pandas, than with cats! \ud83d\udc4f\n\nPrompt -> ALT.\n\n#pandas #surrealart #surreal #ArtificialIntelligence #MidjourneyAI #AIart #AIArtwork\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "ocr"
+}

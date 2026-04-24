@@ -23,6 +23,8 @@ def main():
             help="Maximum number of samples to process (default: all)")
     parser.add_argument("--start", default=0, type=int,
             help="Start from this sample index (default: 0)")
+    parser.add_argument("--no-show-evolution", action="store_true",
+            help="Don't generate attention evolution plots")
 
     args = parser.parse_args()
 
@@ -63,8 +65,11 @@ def main():
                 "python", "compute_attention_rollout.py",
                 "--save_dir", str(sample_dir),
                 "--output_dir", args.output_dir,
-                "--show_evolution"
+                "--interpolation", "nearest"
             ]
+
+            if not args.no_show_evolution:
+                cmd.append("--show_evolution")
 
             result = subprocess.run(cmd, capture_output=True, text=True)
 

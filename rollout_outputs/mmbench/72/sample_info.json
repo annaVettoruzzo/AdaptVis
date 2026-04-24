@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat feeling is represented in this image?\nA. disordered\nB. angry\nC. supportive\nD. engaged\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "image_emotion"
+}

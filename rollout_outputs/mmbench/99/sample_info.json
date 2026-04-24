@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. Someone who is enjoying some nutella on a banana for lunch.\nB. A picture of a dog on a bed.\nC. Person riding on the back of a horse on a gravel road.\nD. A motorcyclist in full gear posing on his bike.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "image_scene"
+}

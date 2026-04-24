@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe object shown in this figure:\nA. Melts at around 2,730\u00b0C\nB. Is a compound made up of silicon and carbon atoms\nC. Is used as an abrasive and cutting tool material\nD. All of these options are correct.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "physical_property_reasoning"
+}

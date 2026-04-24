@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is the main topic of the image\nA. A horse is eating hay\nB. A goat is eating leaves\nC. A cow is eating grass\nD. A sheep is eating flowers\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "image_topic"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich mood does this image convey?\nA. Cozy\nB. Anxious\nC. Happy\nD. Sad\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "D",
+    "Category": "image_emotion"
+}

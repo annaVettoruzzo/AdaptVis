@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat does this sign mean?\nA. Something is on sale.\nB. No photography allowed\nC. Take care of your speed.\nD. Smoking is prohibited here.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "ocr"
+}

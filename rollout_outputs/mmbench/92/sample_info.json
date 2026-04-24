@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. A cutting board and a metal pan topped with pizza.\nB. a brown and black ox and a white and black one and grass\nC. A beautiful woman holding up an umbrella next to a forest.\nD. A huge heard of sheep are all scattered together.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "image_scene"
+}

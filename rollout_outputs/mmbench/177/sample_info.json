@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is the relationship between the people in the image?\nA. professional\nB. friends\nC. family\nD. commercial\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "social_relation"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat kind of human behavior does this picture describe?\nA. A man is practicing his skateboarding skills at a skatepark, performing tricks and jumps on ramps and rails.\nB. A little boy was wearing a suit and tie, and his expression was very focused, as if he was listening to something\nC. A family is playing board games at home, laughing and strategizing while bonding over a friendly competition.\nD. A group of hikers is trekking up a steep mountain trail, using hiking poles and taking breaks to catch their breath and enjoy the scenery.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "action_recognition"
+}

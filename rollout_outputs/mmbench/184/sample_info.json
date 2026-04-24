@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich can be the associated text with this image posted on twitter\nA. \u26a1\ufe0f\ud83c\uddf8\ud83c\uddeaUpdated top of the countries by the number of wins in the Eurovision Song Contest! #eurovision #sweden #ireland\nB. Fantasy vs. reality If you come to Ireland, you will not receive the free house that Roderic O'Gorman promised you. You will live in a tent on the street. Can someone translate this tweet into eight different languages for me, please? #Ireland #IrelandisFull\nC. Flying a real life Cessna 172 vs a #VRChat Cessna 172! Let\u2019s see how it goes\u2026 #AvGeek #Aviation\nD. AAL107 from LHR -> JFK is currently Diverting to Dublin Airport. The reason is currently unknown but ill post when I get the Info. #AA107 #AAL107 #DublinAirport #ireland #diversion #aviation\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "spatial_relationship"
+}

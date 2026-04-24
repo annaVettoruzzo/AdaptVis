@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nHow many giraffes are in this photo?\nA. two\nB. four\nC. zero\nD. one\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "object_localization"
+}

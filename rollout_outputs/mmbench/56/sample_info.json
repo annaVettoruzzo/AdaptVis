@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat will happen next?\nA. the man is gonna fall on the beach\nB. the boat is gonna crash\nC. the man is gonna keep surfing\nD. both A,B, and C\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "A",
+    "Category": "future_prediction"
+}

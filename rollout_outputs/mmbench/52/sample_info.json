@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat will happen next?\nA. the person is gonna sit on top of the snow and feel hurt\nB. the person is gonna get sunk into the fluffy snow\nC. the person is gonna ski\nD. both A,B, and C\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "future_prediction"
+}

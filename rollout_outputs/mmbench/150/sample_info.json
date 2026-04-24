@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe object shown in this figure:\nA. Conducts electricity well at room temperature.\nB. Is typically found in igneous rocks like basalt and granite.\nC. Has a low melting point compared to other minerals.\nD. Is the hardest naturally occurring substance on Earth.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "physical_property_reasoning"
+}

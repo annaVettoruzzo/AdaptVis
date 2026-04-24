@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nhow many chocolate muchkins are there?\nA. 5\nB. 3\nC. 2\nD. 4\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "object_localization"
+}

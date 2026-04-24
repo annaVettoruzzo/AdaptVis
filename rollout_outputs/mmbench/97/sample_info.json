@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat kind of weather is depicted in the picture?\nA. windy\nB. snowy\nC. sunny\nD. rainy\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "image_scene"
+}

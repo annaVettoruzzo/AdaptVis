@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nBased on the image, what is the likely purpose of the utility vehicle in this setting?\nA. The utility vehicle is likely being used for delivering goods.\nB. The utility vehicle is likely being used for off-road racing.\nC. The utility vehicle is likely being used for a safari tour or wildlife observation activity.\nD. The utility vehicle is likely being used for transportation in a city.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "function_reasoning"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nA tropical coral reef is a type of ecosystem in the ocean. Tropical coral reefs are found in warm, shallow water near the equator. They have many large formations called corals. Corals may look like rocks or plants, but they are actually structures made up of living animals and can grow over time.\nCorals provide shelter for fish, crabs, eels, and many other organisms. These coral reef organisms are prey for larger animals, such as sea turtles, sharks, and dolphins. Most of these organisms need tropical coral reefs in order to survive and reproduce.\n\nFigure 1: a tropical coral reef.\n\nFigure 2: several types of corals.\nWhich of the following is a characteristic of tropical coral reefs?\nA. They have many large rocks called corals.\nB. They are usually found in the deep ocean.\nC. They have warm, salty water.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "C",
+    "Category": "physical_property_reasoning"
+}

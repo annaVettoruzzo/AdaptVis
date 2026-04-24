@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is right?\nA. The orange is next to the apple\nB. The apple is on the left\nC. The orange is on the right\nD. All above are not right\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "A",
+    "Category": "physical_relation"
+}

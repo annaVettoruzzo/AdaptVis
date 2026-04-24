@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is the name of this building?\nA. Shanghai Tower\nB. Jin Mao Tower\nC. Burj Khalifa\nD. Shanghai World Financial Center\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "A",
+    "Category": "celebrity_recognition"
+}

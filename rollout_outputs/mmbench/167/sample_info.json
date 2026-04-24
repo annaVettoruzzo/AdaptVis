@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is right?\nA. Two toys are backing each other\nB. Two toys are next to each other\nC. Two toys are far from each other\nD. Two toys are facing each other\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "B",
+    "Category": "physical_relation"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat direction is Indonesia in Austalia?\nA. northeast\nB. southwest\nC. southeast\nD. northwest\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "D",
+    "Category": "spatial_relationship"
+}

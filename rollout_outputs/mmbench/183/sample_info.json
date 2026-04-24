@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat direction is Canada in the Atlantic Ocean?\nA. north\nB. east\nC. south\nD. west\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "D",
+    "Category": "spatial_relationship"
+}

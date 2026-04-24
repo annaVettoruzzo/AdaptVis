@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat motion this image want to convey?\nA. sad\nB. terrified\nC. happy\nD. angry\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "attribute_recognition"
+}

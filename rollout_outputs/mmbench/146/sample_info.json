@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nExtract text from the image\nA. USA ARMY\nB. UNITED STATES ARMY\nC. U.S. MILITARY FORCES\nD. AMERICAN LAND TROOPS\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "ocr"
+}

@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nAre the two horses in the picture the same size?\nA. Can't judge\nB. same\nC. Not the same\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "attribute_comparison"
+}

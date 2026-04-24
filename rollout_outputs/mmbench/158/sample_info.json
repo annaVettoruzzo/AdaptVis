@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nThe object shown in this figure:\nA. Is a colorless and odorless gas\nB. Has a boiling point of -161\u00b0C\nC. Is a greenhouse gas that contributes to climate change\nD. None of these options are correct.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "physical_property_reasoning"
+}

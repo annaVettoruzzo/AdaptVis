@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat is correct Python code to generate the content of the image?\nA. print(10 > 9)\\nprint(10 == 9)\\nprint(10 < 9)\\n\nB. x = lambda a: a + 10\\nprint(x(5))\nC. x = 1.10\\ny = 1.0\\nz = -35.59\\n\\nprint(type(x))\\nprint(type(y))\\nprint(type(z))\\n\nD. x = 1\\ny = 2.8\\nz = 1j\\n\\nprint(type(x))\\nprint(type(y))\\nprint(type(z))\\n\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "A",
+    "Category": "structuralized_imagetext_understanding"
+}

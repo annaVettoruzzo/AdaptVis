@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nTrade happens when people agree to exchange goods and services. People give up something to get something else. Sometimes people barter, or directly exchange one good or service for another.\nGordon and Roxanne open their lunch boxes in the school cafeteria. Both of them could be happier with their lunches. Gordon wanted broccoli in his lunch and Roxanne was hoping for tomatoes. Look at the images of their lunches. Then answer the question below.\nWhat can Gordon and Roxanne trade to each get what they want?\nA. Gordon can trade his tomatoes for Roxanne's broccoli.\nB. Roxanne can trade her almonds for Gordon's tomatoes.\nC. Roxanne can trade her broccoli for Gordon's oranges.\nD. Gordon can trade his tomatoes for Roxanne's sandwich.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "physical_relation"
+}

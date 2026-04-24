@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat's the profession of the people in this picture?\nA. financial analyst\nB. florist\nC. lawyer\nD. magician\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "D",
+    "Category": "identity_reasoning"
+}

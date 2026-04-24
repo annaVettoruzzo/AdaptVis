@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich of these states is farthest east?\nA. Florida\nB. New Hampshire\nC. Tennessee\nD. Washington\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "B",
+    "Category": "attribute_recognition"
+}

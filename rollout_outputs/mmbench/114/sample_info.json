@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich is the main topic of the image\nA. A toy bear and a toy dog\nB. A toy bear and a toy chicken\nC. A toy bear and a toy cat\nD. A toy bear and a toy rabbit\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "B",
+    "Category": "image_topic"
+}

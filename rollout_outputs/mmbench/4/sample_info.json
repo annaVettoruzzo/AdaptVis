@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhich action is performed in this image?\nA. jogging\nB. lunge\nC. swing dancing\nD. passing American football (not in game)\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "action_recognition"
+}

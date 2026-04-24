@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat's the function of the demonstrated object?\nA. watch TV shows\nB. display digital photos in a slideshow format.\nC. display information in pictorial or textual form\nD. project images or videos onto a larger surface\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "C",
+    "Category": "function_reasoning"
+}

@@ -1,6 +1,0 @@
-{
-    "Prompt": "USER: <image>\nWhich one is the correct caption of this image?\nA. A woman sitting on a couch next to a bathroom sink.\nB. A zebra resting its head on another zebra\nC. The bathroom in the cabin needs to be remodeled.\nD. Two men playing a game of catch on a street.\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
-    "Generation": "B",
-    "Golden": "B",
-    "Category": "action_recognition"
-}

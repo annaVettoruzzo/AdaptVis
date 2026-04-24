@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwho is this person?\nA. Deepika Padukone\nB. Hailee Steinfeld\nC. Sridevi\nD. Sandra Oh\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "A",
+    "Category": "celebrity_recognition"
+}

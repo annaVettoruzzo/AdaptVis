@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat direction is Iran in Turjmenistan ?\nA. west\nB. north\nC. east\nD. south\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "A",
+    "Golden": "D",
+    "Category": "spatial_relationship"
+}

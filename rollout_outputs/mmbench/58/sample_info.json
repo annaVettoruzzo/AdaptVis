@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat will happen next?\nA. the truck is gonna drive straight forward\nB. the truck is gonna turn over\nC. the truck is gonna turn left\nD. both A,B, and C\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "D",
+    "Golden": "B",
+    "Category": "future_prediction"
+}

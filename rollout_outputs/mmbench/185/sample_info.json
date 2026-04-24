@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nWhat direction is China in Mongolia?\nA. south\nB. west\nC. north\nD. east\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "C",
+    "Golden": "A",
+    "Category": "spatial_relationship"
+}

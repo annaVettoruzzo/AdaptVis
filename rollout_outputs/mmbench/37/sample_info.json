@@ -1,0 +1,6 @@
+{
+    "Prompt": "USER: <image>\nwhat landmark is this? and where is it?\nA. Machu Picchu in Peru\nB. Windmills at Kinderdijk, Holland\nC. The Great Chinese Wall in China\nD. The Taj Mahal in Agra, India\nAnswer with the option's letter from the given choices directly.\nASSISTANT:",
+    "Generation": "B",
+    "Golden": "B",
+    "Category": "celebrity_recognition"
+}
